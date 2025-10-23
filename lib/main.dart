@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Pet Global',
       home: Scaffold(
-        appBar: AppBar(title: const Text('?? Pet Global')),
+        appBar: AppBar(title: const Text(' Pet Global')),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -19,13 +19,13 @@ class MyApp extends StatelessWidget {
               ElevatedButton.icon(
                 onPressed: () => _launchUrl('https://bit.ly/40BrainDogs'),
                 icon: const Icon(Icons.brain),
-                label: const Text('?? Entrena a tu Perro HOY (75% OFF)'),
+                label: const Text(' Entrena a tu Perro HOY (75% OFF)'),
               ),
               const SizedBox(height: 20),
               ElevatedButton.icon(
                 onPressed: () => _launchUrl('https://temu.com?_bg_fs=1&_x_ads_sub=20250424151324-468981'),
                 icon: const Icon(Icons.shopping_cart),
-                label: const Text('?? Accesorios en Temu (20% Comisión)'),
+                label: const Text(' Accesorios en Temu (20% Comisión)'),
               ),
             ],
           ),
@@ -35,6 +35,8 @@ class MyApp extends StatelessWidget {
   }
 
   Future<void> _launchUrl(String url) async {
-    if (await canLaunch(url)) await launch(url);
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
+    }
   }
 }
