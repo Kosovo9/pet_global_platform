@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
             children: [
               ElevatedButton.icon(
                 onPressed: () => _launchUrl('https://bit.ly/40BrainDogs'),
-                icon: const Icon(Icons.brain),
+                icon: const Icon(Icons.pets),
                 label: const Text(' Entrena a tu Perro HOY (75% OFF)'),
               ),
               const SizedBox(height: 20),
