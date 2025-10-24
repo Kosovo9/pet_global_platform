@@ -1,5 +1,18 @@
 {
-  "buildCommand": "echo 'Using pre-built files'",
-  "outputDirectory": "build/web",
-  "installCommand": "echo 'No install needed'"
+  "version": 2,
+  "builds": [
+    {
+      "src": "build/web/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/build/web/$1"
+    }
+  ]
 }
