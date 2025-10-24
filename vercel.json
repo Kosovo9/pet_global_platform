@@ -1,12 +1,5 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/build/web/$1"
-    }
-  ]
+  "buildCommand": "echo 'Using pre-built files'",
+  "outputDirectory": "build/web",
+  "installCommand": "echo 'No install needed'"
 }
